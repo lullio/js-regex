@@ -4,17 +4,19 @@ Using the provided array, create a second array that only includes the numbers w
 
 let phoneNums = ["801-766-9754", "801-545-5454", "435-666-1212", "801-796-8010", "435-555-9801", "801-009-0909", "435-222-8013", "801-777-66553", "801-777-665-", "801-77A-6655", "801-778-665"];
 
-let regEx = /801-\d\d\d-\d\d\d/,
-    newArray = [];
-//let newArray = phoneNums.filter(elem => regEx.test(elem));
+let regex1 = new RegExp("^801-\\d{3}-\\d{4}$", "g");
 
-for (let i = 0; i < phoneNums.length; i++) {
-    if (regEx.test(phoneNums[i])) {
-        newArray.push(phoneNums[i]);
+console.log(regex1.test("801-766-9754"));
+
+// SOLUÇÃO 1 - FILTER METHOD ARRAY
+console.log(phoneNums.filter(val => regex1.test(val)));
+
+
+// SOLUÇÃO 2 - LOOP
+let arr = [];
+for(let i =0; i<phoneNums.length; i++){
+    if(regex1.test(phoneNums[i])){
+        arr.push(phoneNums[i]);
     }
 }
-let reg = /[A-Z]+/g;
-console.log("fdsafdsafdsTAAAAAsssaTTssT".match(reg));
-
-let str1 = "This45consists65of75numbers85and95letters";
-console.log(str1.match(/.{1,3}/g));
+console.log(arr);
