@@ -26,13 +26,23 @@
 
 
 0 - Create basic regular expressions for matching data.
+
 1 - Make use of all the JavaScript methods that accept regular expressions.
+
 2 - Understand the differences between the varied JavaScript methods used with regular expressions.
+
 3 - Test regular expressions before deploying them in your code.
+
 4 - Understand regular expression syntax.
+
 5 - Define more complex patterns using regular expressions.
+
 6 - Use metacharacters and characters sets in defining patterns.
+
 7 - Take advantage of repetition and grouping.
+
 8 - Use anchored expressions and lookahead assertions correctly.
+
 9 - Include unicode when necessary.
+
 10 - Solve common regular expression problems in JavaScript.
