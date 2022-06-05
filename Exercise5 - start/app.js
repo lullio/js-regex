@@ -8,7 +8,7 @@ const regex = /(\w+), (\w+)/;
 const regex1 = /^(?<lastName>[A-Z]{1,15}), (?<firstName>[A-Z]{1,15})/i;
 
 // match retorna um array com os dados capturados
-// ÚTIL PRA VC ENTENDER A SOLUÇÃO 2
+// ÚTIL PRA VC ENTENDER A SOLUÇÃO 2 E SOLUÇÃO 4
 let test = data[0].match(regex1); 
 // variável test é um array com os dados do 1º match (Jensen Dale). SEMPRE ARMAZENAR O RESULTADO DO EXEC e MATCH numa outra variável.
 console.log(test[2]); // pegando o nome
@@ -65,20 +65,32 @@ console.log(arrCorreto);
 
 // SOLUÇÃO 4 - USANDO Match(String.prototype.match)
 
-let newData = data.map(val => val.match(regex1))
-const nameSurnameArray = data.map((item) => {
-   const [, surname, name] = item.match(regex);
-   return `${name}, ${surname}`;
- });
+let newData = data.map(val => {
+   let arrData = val.match(regex1); return arrData[2] + ", " + arrData[1]})
+   console.log("SOLUÇÃO 4: USANDO MATCH E ACESSANDO OS VALORES DOS GRUPOS CAPTURADOS PELO MATCH");
+   console.log(newData);
 
  /* ----------------------------------------------------------------------- */
 
-// SOLUÇÃO 5 FOREACH com String.replace
+// SOLUÇÃO 5 - USANDO FOREACH E PUSH PRA ARMAZENAR OS VALORES
+ let arrNewData = [];
+data.forEach(function(name){
+   if(regex.test(name)){
+      const strUserName = name.replace(regex, '$2, $1');
+      arrNewData.push(strUserName);
+   }
+})
+console.log("SOLUÇÃO 5 USANDO FOREACH E PUSH PRA ARMAZENAR OS VALORES");
+console.log(arrNewData);
+
+ /* ----------------------------------------------------------------------- */
+
+// SOLUÇÃO 6 FOREACH com String.replace , ALTERANDO VALOR DO ARRAY ORIGINAL
 data.forEach((val, i, arr) => {
    const [txt, lastName, firstName] = regex1.exec(val);
    arr[i] = firstName + ", " + lastName;
 })
-console.log("SOLUÇÃO 4: forEach com exec apenas INTERESSANTE SOLUTION  ↧");
+console.log("SOLUÇÃO 6: forEach com exec apenas INTERESSANTE SOLUTION  ↧");
 console.log(data); // esse tá certo, usei o forEach acima pra alterar os valores do array original. 
 console.log(arr); // retorna só o último valor do array, tá errado;
 
@@ -86,6 +98,17 @@ console.log(arr); // retorna só o último valor do array, tá errado;
 // https://code.tutsplus.com/tutorials/javascript-map-vs-foreach-when-to-use-each-one--cms-38365
 
 
+ /* ----------------------------------------------------------------------- */
+// SOLUÇÕES PARA AVALIAR E ENTENDER MELHOR
+const nameSurnameArray1 = data.map((item) => {
+   const [, surname, name] = item.match(regex);
+   return `${name}, ${surname}`;
+ });
 
-
+// obs: para usar o String.prototype.matchall tem que usar global flag no regex /g
+const regex3 = /(\w+), (\w+)/g;  
+const nameSurnameArray2 = data.map((item) => {
+  const [, surname, name] = Array.from(item.matchAll(regex3))[0];
+  return `${name}, ${surname}`;
+});
 
