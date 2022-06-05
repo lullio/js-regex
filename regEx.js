@@ -68,3 +68,50 @@ let reg1 = /\w+(?=\.com)/g,
     arr1 = data1.match(reg1);
 console.log(arr1);
 
+let regexTwitter = /^@?(\w+)$/;
+let regexEmail = /^[^\s@]+@[^\s@.]+\.[^\s@.]+$/; // negar espaço, @ e ponto, dividir em 3 partes, testar colocando ponto do domínio e nomeEmail
+
+let htmlTag = "<b>This is bold</b>".replace(/b>/g, "strong>"); // trocar <b></b> por <strong></strong>
+
+///////////////////////EXEC
+// 
+let phrase = 'First number: 32, and a second number 100. Here is the last number 15.';
+let matchstart, matchlength, match;
+let result1 = /\d+/.exec(phrase);
+if(result1){
+   matchstart = result.index; // o exec guarda uma propriedade index no array
+   matchlength = result[0].length; // 1ºelemento do array retornado pelo exec é o Match
+   match = result[0];
+}
+
+
+
+// EXPLICAÇÃO MÉTODO REDUCE DO ARRAY
+numbers.reduce((initialvalue, valorDoArray, indice, array) =>{
+   console.log("initial value: " + initialvalue);
+   console.log("valor do array: " + valorDoArray);
+   console.log("indice:  " + indice);
+   console.log("b:array " + array);
+   return null; // se ñ tiver um retorno, o initialvalue é igual undefinied
+}, 25)
+
+const people = [
+   {name: 'kyle', age:25},
+   {name: 'julia', age:25},
+   {name: 'John', age: 12},
+   {name: 'bob', age: 4}
+];
+
+const result = people.reduce((pessoasAgrupadasIdade, pessoa) => {
+   const age = pessoa.age; // pegar idade
+   // checar se ja temos uma pessoa com essa idade
+   if(pessoasAgrupadasIdade[age] == null){ // significa q ñ tem ngm com essa idade
+      // console.log(pessoasAgrupadasIdade);
+      // console.log(pessoa);
+      pessoasAgrupadasIdade[age] = []; // 
+      console.log(pessoasAgrupadasIdade[age]);
+   }
+   pessoasAgrupadasIdade[age].push(pessoa)
+   return pessoasAgrupadasIdade
+}, {}) // queremos começar um objeto vazio
+   console.log(result);
