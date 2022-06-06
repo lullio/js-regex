@@ -11,6 +11,8 @@ console.log(regex2.test("hello"));
 // 2º EXEC RETORNA ARRAY DO MATCHES COM PROPRIEDADES, INDEX, GROUP, LENGTH, E O TEXTO DO MATCH
 console.log(regex2.exec(txt)); // mostra o primeiro item/match do array / caso queira ver o 2º match(2º item do array), usar console.log de novo. O exec grava posição.
 console.log(regex2.exec(txt)); // acessar o segundo match do array
+console.log(regex2.lastIndex); // o exec guarda o ultimo indice de onde parou, o ultimo match parou neste indice, entao é esse indice q ele vai começar a olhar por outro match
+
 
 // 3º toString - retorna o texto literal do regex
 console.log(regex2.toString()); // retorna exatamente a expressão  do regex2

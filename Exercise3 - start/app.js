@@ -9,6 +9,10 @@ let regEx = /^\(?\d{3}[).]?[-.]?\d{3}[-.]?\d{4}$\b/;
 
 let phone = document.getElementById("phone");
 
+// Immediately invoked function expression- uma função em JavaScript que é executada assim que definida.
+// A primeira parte é a função anônima cujo escopo léxico é encapsulado entre parênteses. Isso previne o acesso externo às variáveis declaradas na IIFE(Immediately invoked function expression), bem como evita que estas variáveis locais poluam o escopo global.
+// A segunda parte corresponde à criação da expressão (), por meio da qual o interpretador JavaScript avaliará e executará a função.
+
 (function(){
     phone.addEventListener("keyup", function(){
         if(regEx.test(phone.value)){
