@@ -19,6 +19,7 @@ while((arr=rgx.exec(stri)) !== null){ // retorna o array do match pra variavel a
 }
 console.log(cnt);
 
+
 // matchAll - novo
 const iterable = stri.matchAll(rgx);
 console.log(iterable); // cria um interagidor
