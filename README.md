@@ -1,11 +1,11 @@
 # REGEX JAVASCRIPT
 
-## INFORMAÇÕES IMPORTANTES SOBRE REGEX
+## RegExp
 
 **Curso Udemy**
 
-**Regular Expressions são Objetos no JavaScript**
-**Todos os exercícios RegEx foram resolvidos com JavaScript**
+
+**Expressões Regulares são consideras Objetos no JavaScript, todos os exercícios foram resolvidos com JavaScript.**
 
 ---
 
