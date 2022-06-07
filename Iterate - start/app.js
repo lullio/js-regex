@@ -26,3 +26,9 @@ while(deuMatch = rgx.exec(phrase)){
    if(deuMatch.index == rgx.lastIndex) rgx.lastIndex++; // se o lastIndex for igual a 0 incrementa 1
    console.log(deuMatch); // percorre cada caractere da string, uma posição de cada vez
 }
+
+phrase.match(rgx).forEach((val, i, arr)=>{
+   if(val !== ''){
+      console.log(val);
+   }
+})

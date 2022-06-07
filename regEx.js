@@ -117,3 +117,18 @@ const result = people.reduce((pessoasAgrupadasIdade, pessoa) => {
    return pessoasAgrupadasIdade
 }, {}) // queremos começar um objeto vazio
    console.log(result);
+
+
+
+
+
+
+
+
+
+   /////////////// UTIL
+   // ignorar ponto e virgula que estão dentro de um for loop
+
+   // (;)(?!.*\))
+   // ?<!for\(.*)(;)(?!.*\))
+   // (?<=for\(.*)(;)(?=.*\))C:\Users\Estudos\Desktop\ste\teste.js

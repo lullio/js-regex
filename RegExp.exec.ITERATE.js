@@ -27,3 +27,12 @@ console.log(iterable.next()); // retorna um objeto com o array do match dentro d
 console.log(iterable.next().value); // array do match contendo os mesmos dados do exec
 
 // para ir para o próximo match usar iterable.next() de novo
+
+console.log("foor");
+let ar = [15,25,35,45,55];
+for(key of ar){
+   console.log(key);
+   console.log(ar[key]);
+}
+
+
